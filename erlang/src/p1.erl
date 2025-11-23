@@ -1,4 +1,4 @@
--module(pzl).
+-module(p1).
 
 -export([filter_strings_containing_a/1]).
 

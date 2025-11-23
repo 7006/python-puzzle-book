@@ -1,4 +1,4 @@
--module(pzl_test).
+-module(p1_test).
 -include_lib("eunit/include/eunit.hrl").
 
 filter_strings_containing_a_test_() ->

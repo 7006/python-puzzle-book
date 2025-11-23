@@ -3,7 +3,8 @@ name = "python-puzzle-book"
 version = "0.1.0"
 requires-python = ">=3.13"
 dependencies = [
-    "black (>=25.11.0,<26.0.0)"
+    "black (>=25.11.0,<26.0.0)",
+    "pytest (>=9.0.1,<10.0.0)"
 ]
 
 [tool.poetry]

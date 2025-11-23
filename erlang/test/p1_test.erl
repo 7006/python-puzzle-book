@@ -1,31 +1,42 @@
 -module(p1_test).
 -include_lib("eunit/include/eunit.hrl").
 
-filter_strings_containing_a_test_() ->
+filter_strings_containing_a_list_test_() ->
     [
         {
-            "filter_strings_containing_a: string list",
+            "string list",
             ?_assertEqual(
                 ["apple", "banana", "date"],
-                pzl:filter_strings_containing_a([
-                    "apple", "banana", "cherry", "date"
-                ])
+                p1:filter_strings_containing_a(["apple", "banana", "cherry", "date"])
             )
         },
         {
-            "filter_strings_containing_a: binary list",
-            ?_assertEqual(
-                [<<"apple">>, <<"banana">>, <<"date">>],
-                pzl:filter_strings_containing_a([
-                    <<"apple">>, <<"banana">>, <<"cherry">>, <<"date">>
-                ])
-            )
-        },
-        {
-            "filter_strings_containing_a: empty list",
+            "string non match list",
             ?_assertEqual(
                 [],
-                pzl:filter_strings_containing_a([])
+                p1:filter_strings_containing_a(["bbbb", "cccc"])
+            )
+        },
+        {
+            "empty list",
+            ?_assertEqual([], p1:filter_strings_containing_a([]))
+        }
+    ].
+
+filter_strings_containing_a_binary_test_() ->
+    [
+        {
+            "binary list",
+            ?_assertEqual(
+                [<<"apple">>, <<"banana">>, <<"date">>],
+                p1:filter_strings_containing_a([<<"apple">>, <<"banana">>, <<"cherry">>, <<"date">>])
+            )
+        },
+        {
+            "binary non match list",
+            ?_assertEqual(
+                [],
+                p1:filter_strings_containing_a([<<"bbbb">>, <<"cccc">>])
             )
         }
     ].

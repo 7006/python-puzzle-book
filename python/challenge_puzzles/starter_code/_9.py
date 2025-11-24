@@ -51,4 +51,10 @@ def string_to_morse_code(input_str: str) -> str:
         "+": ".-.-.",
         "!": "-.-.--",
     }
-    return ""
+    morse = []
+    for char in input_str:
+        if char.lower() in morse_dict:
+            morse.append(morse_dict[char.lower()])
+        elif char == " ":
+            morse.append("/")
+    return " ".join(morse)

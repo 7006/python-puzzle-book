@@ -51,10 +51,4 @@ def string_to_morse_code(input_str: str) -> str:
         "+": ".-.-.",
         "!": "-.-.--",
     }
-
-    pass
-
-
-print(string_to_morse_code("HELLO, WORLD!"))
-print(string_to_morse_code("abcdefghijklmnopqrstuvwxyz,.:?'-/()\"@=+!"))
-print(string_to_morse_code(""))
+    return ""
